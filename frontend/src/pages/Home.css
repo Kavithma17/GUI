@@ -1,19 +1,18 @@
-/* General styling for the home section */
-/* Green top bar styling */
+
 .top-bar {
   background-color: #00b3ff; /* Green background color */
   color: #ffffff; /* White text */
   display: flex;
   justify-content: space-between; /* Space out items */
-  padding: 22px 200px; /* Spacing inside the bar */
-  font-family: Arial; /* Font style */
-  font-size: 1rem; /* Text size */
-  position: relative; /* Stick to the top */
+  padding: 22px 200px; 
+  font-family: Arial; 
+  font-size: 1rem; 
+  position: relative; 
   top: 55px;
   height: 10px;
   font-weight: bold;
   align-items: center;
-   /* Adjusted height */
+  
   
 }
 

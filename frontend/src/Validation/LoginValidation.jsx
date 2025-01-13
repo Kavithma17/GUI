@@ -1,4 +1,0 @@
-function validation(values)
-{
-
-}

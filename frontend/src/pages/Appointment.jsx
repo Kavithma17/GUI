@@ -1,9 +1,138 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './Appointment.css';
+import Footer from '../components/Footer';
 
 const Appointment = () => {
-  return (
-    <div>Appointment</div>
-  )
-}
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    date: '',
+    time: '',
+    doctor: '',
+    message: '',
+  });
 
-export default Appointment
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Appointment Details:', formData);
+    alert('Appointment successfully booked!');
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      date: '',
+      time: '',
+      doctor: '',
+      message: '',
+    });
+  };
+
+  return (
+
+    <>
+    <div className='top'>
+
+           <h2> Make your Appointment</h2>
+       </div>
+
+    <div className="appointment">
+     
+      <form className="appointment-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Phone Number</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="date">Appointment Date</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="time">Preferred Time</label>
+          <input
+            type="time"
+            id="time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="doctor">Select Doctor</label>
+          <select
+            id="doctor"
+            name="doctor"
+            value={formData.doctor}
+            onChange={handleChange}
+            required
+          >
+            <option value="">-- Select a Doctor --</option>
+            <option value="Dr. Smith">Dr. Smith</option>
+            <option value="Dr. Johnson">Dr. Johnson</option>
+            <option value="Dr. Lee">Dr. Lee</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Additional Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            value={formData.message}
+            onChange={handleChange}
+          ></textarea>
+        </div>
+        <button type="submit" className="submit-btn">
+          Book Appointment
+        </button>
+      </form>
+    </div>
+
+   
+    </>
+  );
+};
+
+export default Appointment;

@@ -1,0 +1,197 @@
+/* Header Section */
+.top {
+    text-align: center;
+    background: linear-gradient(rgb(0, 183, 255), rgb(167, 237, 255), rgb(190, 236, 253));
+    margin-top: 50px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    width: 1518px;
+    position: relative;
+}
+  
+.top h2 {
+    font-size: 2rem;
+    color: #00217a;
+}
+  
+/* Appointment Section */
+.appointment {
+    font-family: 'Arial', sans-serif;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    
+    position: relative;
+    background-image: url(../assets/pic12.jpg);
+    background-size: 1200px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+  /* Header inside Appointment Section */
+  .appointment h2 {
+    text-align: center;
+    color: #004e64;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+  
+  .progress-bar div {
+    text-align: center;
+    position: relative;
+    flex: 1;
+  }
+  
+  .progress-bar div:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    background-color: #004e64;
+    border-radius: 50%;
+    border: 3px solid #004e64;
+  }
+  
+  .progress-bar div:after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: calc(100% - 48px);
+    background-color: #d3d3d3;
+    z-index: -1;
+  }
+  
+  .progress-bar div:last-child:after {
+    display: none;
+  }
+  
+  .progress-bar .active:before {
+    background-color: #0073e6;
+    border-color: #0073e6;
+  }
+  
+  .progress-bar .active:after {
+    background-color: #0073e6;
+  }
+  
+  /* Form Styling */
+.appointment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.515);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.279);
+    width: 100%;
+    max-width: 800px;
+    margin-top: 40px;
+}
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    background-color: #001756;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 6px rgba(0, 115, 230, 0.2);
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  /* Buttons */
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 300px;
+    height: 40px;
+    margin-top:50px ;
+   margin-left: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cancel-btn {
+    background-color: #ccc;
+    color: #fff;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #999;
+  }
+  
+  .submit-btn,
+  .next-btn {
+    background-color: #0073e6;
+    color: #fff;
+  }
+  
+  .submit-btn:hover,
+  .next-btn:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Footer Text */
+  .footer-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .appointment {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .progress-bar div:after {
+      height: 2px;
+    }
+  }
+  
