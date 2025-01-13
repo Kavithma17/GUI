@@ -1,0 +1,100 @@
+/* Navbar.css */
+
+/* General navbar styles */
+.navbar {
+  background-color: #ffffff; /* Clean white background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 15px 0px;
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1000;
+  height: 30px; /* Adjusted height for a balanced look */
+}
+
+/* Center content inside the navbar with reduced width */
+.navbar-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between;
+  max-width: 1400px; /* Reduced width for a smaller navbar */
+  margin: 0 auto; /* Center the navbar */
+  height: 100%; /* Ensure the container takes full height of the navbar */
+}
+
+/* Logo styling */
+.navbar-logo img {
+  height: 55px; 
+  width: 200px;/* Adjust logo height */
+  cursor: pointer;
+  padding: 0; /* Remove padding around the logo */
+}
+
+/* Navigation menu styles */
+.navbar-menu {
+  display: flex;
+  gap: 30px; /* Space between links */
+}
+
+.navbar-item {
+  color: #333333; /* Dark text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Standard font size */
+  font-weight: 500; /* Medium font weight */
+  padding: 8px 15px; /* Padding for clickable area */
+  position: relative; /* Needed for pseudo-element positioning */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover and underline animation */
+.navbar-item:hover {
+  color: #00b3ff; /* Blue hover text */
+}
+
+.navbar-item::after {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute;
+  left: 50%; /* Start from the center */
+  bottom: 0; /* Position it at the bottom of the text */
+  width: 0; /* Initially, no width */
+  height: 2px; /* Thickness of the underline */
+  background-color: #00b3ff; /* Blue underline color */
+  transition: all 0.4s ease; /* Smooth underline transition */
+  transform: translateX(-50%); /* Center the underline */
+}
+
+.navbar-item:hover::after {
+  width: 100%; /* Expand the underline to the full width */
+  left: 0; /* Reset to align to the start */
+  transform: none; /* Reset transform */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    max-width: 100%; /* Full width for smaller devices */
+    padding: 10px;
+  }
+
+  .navbar-menu {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff; /* Same background as navbar */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-logo img {
+    height: 35px; /* Adjust logo for smaller screens */
+  }
+
+  .navbar-item {
+    font-size: 14px; /* Slightly smaller text for mobile */
+    padding: 8px 10px;
+  }
+}

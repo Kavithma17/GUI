@@ -1,0 +1,380 @@
+/* General styling for the home section */
+/* Green top bar styling */
+.top-bar {
+  background-color: #00b3ff; /* Green background color */
+  color: #ffffff; /* White text */
+  display: flex;
+  justify-content: space-between; /* Space out items */
+  padding: 22px 200px; /* Spacing inside the bar */
+  font-family: Arial; /* Font style */
+  font-size: 1rem; /* Text size */
+  position: relative; /* Stick to the top */
+  top: 55px;
+  height: 10px;
+  font-weight: bold;
+  align-items: center;
+   /* Adjusted height */
+  
+}
+
+
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center align text */
+  }
+
+  .top-bar .find-us, 
+  .top-bar .hotline {
+    margin-bottom: 10px; /* Add spacing between items */
+  }
+}
+.home {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: left; /* Center content horizontally */
+  background: linear-gradient(to right, #ceeae6, #ffffff,#ffffff,#ffffff); /* Gradient from blue to white */
+   /* Gradient from blue to white */
+  box-sizing: border-box; /* Include padding in element's total width/height */
+}
+/* Content section styling */
+.home-content {
+  max-width: 40%;
+  padding-left: 100px;
+  
+
+   /* Limit the width of text content */
+   /* Add space between text and image */
+}
+
+
+.home-content h1 {
+  font-size: 1.3rem; /* Large heading */
+  color: #00b3ff; 
+  align-items: left;/* Dark blue color */
+ 
+  margin-top:30px;
+  font-family: sans-serif;
+  
+ 
+}
+
+
+.home-content h6 {
+  font-size: 2.8rem; /* Standard font size */
+  line-height: 1.2; /* Improve readability */
+  color: #00217a; /* Dark text color */
+  margin-bottom: 25px;
+  line-height: 60px;
+  margin-top: 40px;
+  font-family: sans-serif;
+/* Spacing between paragraphs */
+}
+
+/* Button styling */
+.home-button {
+  display: inline-block;
+  padding: 12px 30px; /* Button padding */
+  font-size: 1rem; /* Button font size */
+  font-weight: bold; /* Bold text */
+  color: #ffffff; /* White text color */
+  background-color: #0056b3; /* Dark blue background */
+  border: none; /* Remove default border */
+  border-radius: 35px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  margin-bottom: 0px; 
+  margin-top: 50px;/* Smooth background color change */
+  
+}
+
+.home-button:hover {
+  background-color: #00217a; /* Darker blue on hover */
+}
+
+.home-image {
+  max-width: 150%; /* Limit the width of the image */
+  margin-right: 100px;
+  padding-top: 90px;
+  
+
+  ;/* Add space between text and image */
+}
+/* Image section styling */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center align content */
+  }
+
+  .home-content {
+    max-width: 100%; /* Use full width */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 30px; /* Add spacing below text */
+  }
+
+  .home-image {
+    max-width: 100%; 
+   /* Use full width for image */
+  }
+  .home-contact {
+    width: 200%;
+    margin-left: 50px;
+     /* Use full width for image */
+  }
+}
+
+/* General Styling for the Welcome Section */
+.welcome {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Aligns items vertically */
+  padding: 20px;
+  gap: 20px; /* Adds spacing between text and video */
+  /* Optional: Light background */
+}
+
+/* Styling for the Content Section */
+.welcome-content {
+  flex: 1; /* Allows content to take available space */
+  max-width: 600px; /* Optional: Limits content width */
+  text-align: center; /* Aligns text to the left */
+  font-family: Arial, sans-serif; /* Clean font */
+  color: #333; /* Text color */
+}
+
+.welcome-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #00217a; /* Deep blue for the title */
+}
+
+.welcome-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.welcome-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #0073e6; /* Optional: Accent color */
+}
+
+.welcome-content p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Styling for the Video Section */
+.welcome-video {
+  flex: 1; /* Allows video to take available space */
+  max-width: 800px; /* Optional: Limit video width */
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-video video {
+  width: 100%; /* Video takes up full width of its container */
+  max-width: 1500px; /* Optional: Maximum width */
+  height: 700px; /* Maintains aspect ratio */
+  border-radius: 10px; /* Optional: Rounded corners */
+  /* Optional: Subtle shadow */
+ 
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome {
+      flex-direction: column; /* Stack content vertically */
+  }
+
+  .welcome-content, 
+  .welcome-video {
+      max-width: 100%; /* Take full width on smaller screens */
+  }
+
+  .welcome-content h1 {
+      font-size: 2rem;
+  }
+
+  .welcome-content h3 {
+      font-size: 1.2rem;
+  }
+
+  .welcome-content h4 {
+      font-size: 1rem;
+  }
+}
+
+/* General Styling for the Home Container */
+
+
+/* Departments Section Styling */
+.departments-section {
+  display: flex;
+  flex-direction: row; /* Align items side-by-side */
+  gap: 20px; /* Add space between sections */
+  max-width: 1200px;
+  margin:  auto;
+  
+  padding-top: 70px;
+  /* Optional: Light background */
+  
+  
+}
+
+
+/* Departments List Styling */
+.departments-list {
+  flex: 1.5; /* Occupy equal space */
+  border-right: 3px solid #00d5ff; /* Add vertical separator */
+  margin-left: 0px;
+  padding-top: 40px;
+}
+
+.departments-list ul {
+  list-style:square;
+  
+  /* Remove default list style */
+}
+
+.departments-list ul li::marker {
+  color: #0073e6; /* Set color for list item markers */
+}
+
+.departments-list li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+   color: #333;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.departments-list li:hover,
+.departments-list li.selected {
+  color: #00a5e6; /* Highlight on hover and when selected */
+}
+
+
+
+/* Department Details Styling */
+.department-details {
+  flex: 2; /* Occupy more space */
+  padding: 20px; /* Gradient border */
+   
+  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #f5ffff, #fcfdfe,#ffffff );
+  margin-left: 100px;
+
+  
+}
+
+.department-details h3 {
+  font-size: 2rem;
+  color: #00217a; /* Dark blue text */
+
+  margin-bottom: 15px;
+}
+
+.department-details p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.department-details ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #555;
+}
+
+.department-details ul li {
+  margin-bottom: 10px;
+}
+
+/* Vertical Sidebar (Optional) */
+/* General Styles for Services Section */
+.services-section {
+  
+   /* Optional: Light background */
+  padding-left: 100px;
+  margin: auto;
+  margin-top: 100px;
+  padding-bottom: 30px;
+}
+
+
+.services-intro p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 40px;
+  padding-left: 80px;
+}
+
+/* Styling the list of services */
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Styling each service card */
+.service-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.service-icon {
+  font-size: 50px;
+  color: #00b3ff;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  color: #00217a; 
+  
+  font-weight: 600;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Change color of title on hover */
+.service-card:hover h3 {
+  color: #00b3ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .services-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-card {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
