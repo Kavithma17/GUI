@@ -1,73 +1,92 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import validation from './SignupValidation';
+import React, { Component, useState } from "react";
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+import './Signup.css';
 
-const Signup = () => {
-  const [values, setValues] = useState({
-    name: '',
-    email: '',
-    password: '',
-  });
 
-  const [errors, setErrors] = useState({});
+export default function SignUp() {
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate =useNavigate()
+ 
 
-  const handleInput = (event) => {
-    setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
-  };
+  const handleSubmit = (e) => {
+    
+      e.preventDefault();
+     
+      axios.post("http://localhost:3001/register", {fname, lname, email, password})
+        .then((result) => {console.log(result)
+        navigate('/login')
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setErrors(validation(values));
-  };
+      })
+       .catch (err=> console.log(err))
+
+        
+        
+    }
+  
 
   return (
-    <div className="signup-container">
-      <div className="signup-box">
-        <h1>Sign Up</h1>
+    <div className="signup">
+      <div className="signup-container">
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
+          <h3>Sign up</h3>
+         
+          
+          
+
+          <div className="signup-box">
+            <label>First name</label>
             <input
               type="text"
-              placeholder="Enter your Name"
-              name="name"
-              value={values.name}
-              onChange={handleInput}
+              className="form-control"
+              placeholder="First name"
+              onChange={(e) => setFname(e.target.value)}
             />
-            {errors.name && <span>{errors.name}</span>}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
+          <div className="signup-box">
+            <label>Last name</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Last name"
+              onChange={(e) => setLname(e.target.value)}
+            />
+          </div>
+
+          <div className="signup-box">
+            <label>Email address</label>
             <input
               type="email"
-              placeholder="Enter Email"
-              name="email"
-              value={values.email}
-              onChange={handleInput}
+              className="form-control"
+              placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
             />
-            {errors.email && <span>{errors.email}</span>}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
+          <div className="signup-box">
+            <label>Password</label>
             <input
               type="password"
-              placeholder="Enter Password"
-              name="password"
-              value={values.password}
-              onChange={handleInput}
+              className="form-control"
+              placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
             />
-            {errors.password && <span>{errors.password}</span>}
           </div>
 
-          <button type="submit" className="signup-button">Sign Up</button>
-          <p className="terms">You agree to our terms and policies</p>
-          <Link to="/login" className="login-link">Already have an account? Login</Link>
+          <div className="signup-button">
+            <button type="submit" className="btn btn-primary">
+              Register
+            </button>
+          </div>
+          <p className="signup-text">
+            Already have an account <a href="/login">Login</a>
+          </p>
         </form>
       </div>
     </div>
   );
-};
-
-export default Signup;
+}

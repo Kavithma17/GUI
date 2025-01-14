@@ -1,66 +1,77 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import validation from './LoginValidation';
+import React, { Component, useState } from "react";
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+import LoginValidation from './LoginValidation';
 import './Login.css';
 
-const Login = () => {
-  const [values, setValues] = useState({
-    email: '',
-    password: '',
-  });
+export default function SignUp() {
 
-  const [errors, setErrors] = useState({});
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate =useNavigate()
+ 
 
-  const handleInput = (event) => {
-    setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
-  };
+  const handleSubmit = (e) => {
+    
+      e.preventDefault();
+     
+      axios.post("http://localhost:3001/login", { email, password})
+        .then((result) => {
+          console.log(result)
+            
+          if (result.data == "Success") {
+            navigate("/"); // Navigate to the home page
+          } else {
+            alert("Login failed. Please check your credentials. ");
+          }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const validationErrors = validation(values);
-    setErrors(validationErrors);
-  };
+       
+
+      })
+       .catch (err=> console.log(err))
+
+        
+        
+    }
+  
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h1>Login</h1>
+    <div className="login">
+      <div className="log-container">
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
+          <h3>Log in</h3>
+         
+
+          <div className="log-box">
+            <label>Email address</label>
             <input
               type="email"
-              placeholder="Enter Email"
-              name="email"
-              value={values.email}
-              onChange={handleInput}
+              className="form-control"
+              placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
             />
-            {errors.email && <span>{errors.email}</span>}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
+          <div className="log-box">
+            <label>Password</label>
             <input
               type="password"
-              placeholder="Enter Password"
-              name="password"
-              value={values.password}
-              onChange={handleInput}
+              className="form-control"
+              placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
             />
-            {errors.password && <span>{errors.password}</span>}
           </div>
 
-          <button type="submit" className="login-button">
-            Log in
-          </button>
-          <p className="terms">You agree to our terms and policies</p>
-          <Link to="/signup" className="create-acc">
-            Create New Account
-          </Link>
+          <div className="log-button">
+            <button type="submit" className="log-buttun1">
+             Log in
+            </button>
+          </div>
+          <p className="not-register">
+            If you don't have an account <a href="/signup">Sign up?</a>
+          </p>
         </form>
       </div>
     </div>
   );
-};
-
-export default Login;
+}
