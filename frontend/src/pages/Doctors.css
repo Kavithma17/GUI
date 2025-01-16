@@ -1,0 +1,95 @@
+.doctors-page {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    
+}
+  .doctors-header {
+    background: linear-gradient(90deg, #e3f8fc, #a1d9f3);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .doctors-header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .doctors-header p {
+    color: #7f8c8d;
+    margin: 5px 0 0 0;
+  }
+  
+  .doctors-grid {
+    margin-left: 70px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .doctor-card {
+    background: #e2f9ff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 290px;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .doctor-image {
+    width: 60%;
+    height: 50%;
+    object-fit: cover;
+    margin-left: 60px;
+    margin-top: 10px;
+  }
+  
+  .doctor-details {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .doctor-details h3 {
+    font-size: 1.2em;
+    color: #34495e;
+    margin: 10px 0 5px 0;
+  }
+  
+  .doctor-details p {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin: 5px 0;
+  }
+  
+  .appointment-button {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #000da1;
+    border: 1px;
+    width: 200px;
+    height: 30px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 0px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .appointment-button:hover {
+    background-color: #9fd8ff;
+  }
+  

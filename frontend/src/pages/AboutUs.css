@@ -1,4 +1,5 @@
 /* General styling for the about us section */
+
 .about-us {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -27,6 +28,68 @@
    
   
     
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.workout-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  gap: 2rem;
+}
+
+.workout-section:nth-child(odd) {
+  flex-direction: row-reverse; /* Alternating layout */
+}
+
+.text-content {
+  flex: 1;
+  text-align: left;
+}
+
+.text-content h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.text-content span {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #888;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.workout-section img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
   
   /* Story section */

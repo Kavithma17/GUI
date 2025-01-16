@@ -23,7 +23,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 16px;
     position: relative;
     background-image: url(../assets/b.jpg);
     background-size: cover;

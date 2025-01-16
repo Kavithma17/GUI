@@ -1,158 +1,134 @@
-
+/* Top Bar */
 .top-bar {
-  background-color: #00b3ff; /* Green background color */
+  background-color: #00b3ff; /* Blue background color */
   color: #ffffff; /* White text */
   display: flex;
   justify-content: space-between; /* Space out items */
-  padding: 22px 200px; 
-  font-family: Arial; 
-  font-size: 1rem; 
-  position: relative; 
+  padding: 22px 200px;
+  font-family: Arial;
+  font-size: 1rem;
+  position: relative;
   top: 55px;
   height: 10px;
   font-weight: bold;
   align-items: center;
-  
-  
 }
 
-
+/* Media Query for smaller screens */
 @media (max-width: 768px) {
   .top-bar {
     flex-direction: column; /* Stack items vertically */
     text-align: center; /* Center align text */
   }
 
-  .top-bar .find-us, 
+  .top-bar .find-us,
   .top-bar .hotline {
     margin-bottom: 10px; /* Add spacing between items */
   }
 }
+
+/* Home Section */
 .home {
   display: flex;
-  align-items: center; /* Vertically center content */
-  justify-content: left; /* Center content horizontally */
-  background: linear-gradient(to right, #ceeae6, #ffffff,#ffffff,#ffffff); /* Gradient from blue to white */
-   /* Gradient from blue to white */
-  box-sizing: border-box; /* Include padding in element's total width/height */
+  align-items: center;
+  justify-content: left;
+  background: linear-gradient(to right, #ceeae6, #ffffff, #ffffff, #ffffff); /* Gradient from blue to white */
+  box-sizing: border-box;
 }
-/* Content section styling */
+
+/* Home Content Section */
 .home-content {
   max-width: 40%;
   padding-left: 100px;
-  
-
-   /* Limit the width of text content */
-   /* Add space between text and image */
 }
-
 
 .home-content h1 {
-  font-size: 1.3rem; /* Large heading */
-  color: #00b3ff; 
-  align-items: left;/* Dark blue color */
- 
-  margin-top:30px;
+  font-size: 1.3rem;
+  color: #00b3ff;
+  margin-top: 30px;
   font-family: sans-serif;
-  
- 
 }
 
-
 .home-content h6 {
-  font-size: 2.8rem; /* Standard font size */
-  line-height: 1.2; /* Improve readability */
-  color: #00217a; /* Dark text color */
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: #00217a;
   margin-bottom: 25px;
   line-height: 60px;
   margin-top: 40px;
   font-family: sans-serif;
-/* Spacing between paragraphs */
 }
 
-/* Button styling */
+/* Button Styling */
 .home-button {
   display: inline-block;
-  padding: 12px 30px; /* Button padding */
-  font-size: 1rem; /* Button font size */
-  font-weight: bold; /* Bold text */
-  color: #ffffff; /* White text color */
-  background-color: #0056b3; /* Dark blue background */
-  border: none; /* Remove default border */
-  border-radius: 35px; /* Rounded corners */
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 35px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
-  margin-bottom: 0px; 
-  margin-top: 50px;/* Smooth background color change */
-  
+  margin-top: 50px;
 }
 
 .home-button:hover {
-  background-color: #00217a; /* Darker blue on hover */
+  background-color: #00217a;
 }
 
+/* Image Section */
 .home-image {
-  max-width: 150%; /* Limit the width of the image */
+ 
   margin-right: 100px;
   padding-top: 90px;
-  
-
-  ;/* Add space between text and image */
 }
-/* Image section styling */
 
-
-/* Responsive adjustments */
+/* Responsive Design for Home Section */
 @media (max-width: 768px) {
   .home {
-    flex-direction: column; /* Stack content vertically */
-    text-align: center; /* Center align content */
+    flex-direction: column;
+    text-align: center;
   }
 
   .home-content {
-    max-width: 100%; /* Use full width */
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 30px; /* Add spacing below text */
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 
   .home-image {
-    max-width: 100%; 
-   /* Use full width for image */
-  }
-  .home-contact {
-    width: 200%;
-    margin-left: 50px;
-     /* Use full width for image */
+    max-width: 100%;
   }
 }
 
-/* General Styling for the Welcome Section */
+/* Welcome Section */
 .welcome {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping for smaller screens */
-  justify-content: center; /* Centers the content horizontally */
-  align-items: center; /* Aligns items vertically */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  gap: 20px; 
-  background-image: url(../assets/pic12.jpg);
-  background-size: cover;/* Adds spacing between text and video */
-  /* Optional: Light background */
+  gap: 20px;
+  background-image:url(../assets/home4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
 
-/* Styling for the Content Section */
 .welcome-content {
-  flex: 1; /* Allows content to take available space */
-  max-width: 600px; /* Optional: Limits content width */
-  text-align: center; /* Aligns text to the left */
-  font-family: Arial, sans-serif; /* Clean font */
-  color: #333; /* Text color */
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
 .welcome-content h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #00217a; /* Deep blue for the title */
+  color: #00217a;
 }
 
 .welcome-content h3 {
@@ -164,7 +140,7 @@
 .welcome-content h4 {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #0073e6; /* Optional: Accent color */
+  color: #0073e6;
 }
 
 .welcome-content p {
@@ -172,210 +148,213 @@
   font-size: 1rem;
 }
 
-/* Styling for the Video Section */
-.welcome-video {
-  flex: 1; /* Allows video to take available space */
-  max-width: 800px; /* Optional: Limit video width */
-  display: flex;
-  justify-content: center;
-}
-
-.welcome-video video {
-  width: 100%; /* Video takes up full width of its container */
-  max-width: 1500px; /* Optional: Maximum width */
-  height: 700px; /* Maintains aspect ratio */
-  border-radius: 10px; /* Optional: Rounded corners */
-  /* Optional: Subtle shadow */
- 
-}
 
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .welcome {
-      flex-direction: column; /* Stack content vertically */
-  }
-
-  .welcome-content, 
-  .welcome-video {
-      max-width: 100%; /* Take full width on smaller screens */
-  }
-
-  .welcome-content h1 {
-      font-size: 2rem;
-  }
-
-  .welcome-content h3 {
-      font-size: 1.2rem;
-  }
-
-  .welcome-content h4 {
-      font-size: 1rem;
-  }
-}
-
-/* General Styling for the Home Container */
-
-
-/* Departments Section Styling */
+/* Departments Section */
+/* Departments Section */
+/* Departments Section */
 .departments-section {
   display: flex;
-  flex-direction: row; /* Align items side-by-side */
-  gap: 20px; /* Add space between sections */
-  max-width: 1200px;
-  margin:  auto;
-  
-  padding-top: 70px;
-  /* Optional: Light background */
-  
+  justify-content: space-between;
+ /* Increased padding for more space */
+ margin-left: 160px;
+ margin-top: 100px;
+
+  background-color: #f8f8f8; /* Light background color */
+   max-width: 1200px;
+   max-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px; /* Slightly larger rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: background-color 0.3s ease;
   
 }
 
-
-/* Departments List Styling */
+/* Departments List */
 .departments-list {
-  flex: 1.5; /* Occupy equal space */
-  border-right: 3px solid #00d5ff; /* Add vertical separator */
-  margin-left: 0px;
-  padding-top: 40px;
+  width: 30%;
+  height: 10px; /* Slightly increased width for better alignment */
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  gap: 10px; 
+  margin-left: 40px;
+  margin-top: px;/* Add space between each list item */
 }
 
 .departments-list ul {
-  list-style:square;
-  
-  /* Remove default list style */
-}
-
-.departments-list ul li::marker {
-  color: #0073e6; /* Set color for list item markers */
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+ 
 }
 
 .departments-list li {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  background-color: #00b3ff; /* Light blue background */
+  border-radius: 12px; /* Rounded corners */
+  padding: 8px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px;
+  color: #19006c; 
+ /* White text */
   font-weight: bold;
-   color: #333;
-  
-  cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added a bit more shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+  background-color: #ffffff; /* Gradient overlay */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1); 
+ 
 }
 
-.departments-list li:hover,
-.departments-list li.selected {
-  color: #00a5e6; /* Highlight on hover and when selected */
+.departments-list li:hover {
+  transform: translateY(-5px); /* Slightly lift effect */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  background-color: #9cccff; /* Darker blue on hover */
+  filter: brightness(1.1); /* Slightly brighter on hover */
 }
 
-
-
-/* Department Details Styling */
-.department-details {
-  flex: 2; /* Occupy more space */
-  padding: 20px; /* Gradient border */
-   
-  
+.departments-list li:active {
+  transform: translateY(2px); /* Slightly press down on click */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to right, #f5ffff, #fcfdfe,#ffffff );
-  margin-left: 100px;
-
-  
 }
 
-.department-details h3 {
-  font-size: 2rem;
-  color: #00217a; /* Dark blue text */
+/* Department Details */
+.department-details {
+  width: 500px; 
+  height: 400px; /* Adjusted for better content area width */
+  padding: 30px; /* More padding for readability */
+  background-color: #f9f9f99e; /* White background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+  line-height: 1.8; /* Better line spacing */
+  color: #000000; /* Dark text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 50px auto; /* Center the details box and add margin between img and box */
+}
 
-  margin-bottom: 15px;
+
+.department-details h2 {
+  font-size: 2.2rem; /* Larger heading */
+  color: #00217a; /* Deep blue color */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 0px; /* Add slight spacing for a more modern look */
 }
 
 .department-details p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-  font-size: 1rem;
-  color: #333;
+  margin-bottom: 25px; /* Add space between paragraphs */
+  font-size: 0.9rem; /* Larger text size */
 }
 
-.department-details ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  color: #555;
+/* Add smooth hover transition for department details */
+.department-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
-.department-details ul li {
-  margin-bottom: 10px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .departments-list {
+    width: 30%; /* Adjust the width for medium screens */
+  }
+
+  .department-details {
+    width: 65%; /* Adjust the width for medium screens */
+  }
 }
 
-/* Vertical Sidebar (Optional) */
-/* General Styles for Services Section */
+@media (max-width: 768px) {
+  .departments-section {
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center; /* Center align the content */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .departments-list {
+    width: 100%; /* Full width for the list */
+    gap: 15px; /* Less gap between items on smaller screens */
+  }
+
+  .department-details {
+    width: 100%; /* Full width for the details */
+    margin-top: 20px; /* Add space above the details section */
+  }
+}
+
+
+/* Services Section */
+/* Services Section */
 .services-section {
-  
-   /* Optional: Light background */
-  padding-left: 100px;
-  margin: auto;
-  margin-top: 100px;
-  padding-bottom: 30px;
+  text-align: center;
+  padding: 20px 20px;
+  background-color: #f8f8f8;
+  margin-left: 100px;
+  margin-top: 20px;
 }
 
+.services-intro h2 {
+  font-size: 1rem;
+  color: #00217a;
+  margin-top: -30px;
+}
 
 .services-intro p {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 40px;
-  padding-left: 80px;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 50px;
 }
 
-/* Styling the list of services */
 .services-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
   justify-content: center;
-  gap: 30px;
 }
 
-/* Styling each service card */
 .service-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
-
+  width: 250px;
+  margin-bottom: 30px;
+ 
+ 
 }
 
 .service-card:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.service-icon {
-  font-size: 50px;
-  color: #00b3ff;
-  margin-bottom: 15px;
+.service-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-.service-card h3 {
-  font-size: 20px;
-  color: #00217a; 
-  
-  font-weight: 600;
-  margin-top: 10px;
-  transition: color 0.3s ease;
+.service-content {
+  padding: 10px;
 }
 
-/* Change color of title on hover */
-.service-card:hover h3 {
-  color: #00b3ff;
+.service-content h3 {
+  font-size: 1.2rem;
+  color: #00217a;
+  margin-bottom: 0px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .services-list {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .service-card {
-    width: 80%;
-    margin: 0 auto;
-  }
+.service-content p {
+  font-size: 1rem;
+  color: #666;
 }
+
+
+/* News Section */

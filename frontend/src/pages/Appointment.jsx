@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './Appointment.css';
 import Footer from '../components/Footer';
 
+
+
+
 const Appointment = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -31,6 +34,7 @@ const Appointment = () => {
       doctor: '',
       message: '',
     });
+    
   };
 
   return (
@@ -100,20 +104,25 @@ const Appointment = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="doctor">Select Doctor</label>
-          <select
-            id="doctor"
-            name="doctor"
-            value={formData.doctor}
-            onChange={handleChange}
-            required
-          >
-            <option value="">-- Select a Doctor --</option>
-            <option value="Dr. Smith">Dr. Smith</option>
-            <option value="Dr. Johnson">Dr. Johnson</option>
-            <option value="Dr. Lee">Dr. Lee</option>
-          </select>
-        </div>
+  <label htmlFor="doctor">Select Doctor</label>
+  <select
+    id="doctor"
+    name="doctor"
+    value={formData.doctor}
+    onChange={handleChange}
+    required
+  >
+    <option value="">--Select a Doctor--</option>
+    <option value="1">Dr. John Doe - Cardiologist</option>
+    <option value="2">Dr. Jane Smith - Neurologist</option>
+    <option value="3">Dr. Emily Johnson - Pediatrician</option>
+    <option value="4">Dr. Michael Lee - Orthopedist</option>
+    <option value="5">Dr. Sarah Brown - Dermatologist</option>
+    
+  </select>
+</div>
+
+
         <div className="form-group">
           <label htmlFor="message">Additional Message</label>
           <textarea
@@ -129,10 +138,11 @@ const Appointment = () => {
         </button>
       </form>
     </div>
-
+  <Footer/>
    
     </>
   );
 };
 
-export default Appointment;
+
+export default Appointment;

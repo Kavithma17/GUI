@@ -1,7 +1,7 @@
 
 /* Footer Styling */
 .footer {
-    background: linear-gradient(to right, #ceeae6, #d9f9ff,#e4f2ff,#e5e5e7); /* Gradient from blue to white */
+    background: linear-gradient(to right,rgb(159, 218, 255),#efeded); /* Gradient from blue to white */
 
     color: #00277c;
     padding: 40px 0;
@@ -46,7 +46,7 @@
   }
   
   .footer-item strong {
-    color: #00a2ff;
+    color: #000000;
   }
   
   .footer-social {
