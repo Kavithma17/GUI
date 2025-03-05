@@ -6,7 +6,7 @@
     height: 120px;
     align-items: center;
     justify-content: center;
-    width: 1518px;
+    width: 1418px;
     position: relative;
 }
   
@@ -195,5 +195,11 @@
     .progress-bar div:after {
       height: 2px;
     }
+  }
+  .why {
+    font-size: 1.2rem;
+    color: #004e64;
+    margin-top: 20px;
+    text-align: center;
   }
   

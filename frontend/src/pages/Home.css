@@ -23,7 +23,7 @@
 
   .top-bar .find-us,
   .top-bar .hotline {
-    margin-bottom: 10px; /* Add spacing between items */
+    margin-bottom: 10px; 
   }
 }
 
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  background: linear-gradient(to right, #ceeae6, #ffffff, #ffffff, #ffffff); /* Gradient from blue to white */
+  background: linear-gradient(to right, #aaffff, #ffffff, #ffffff, #ffffff); /* Gradient from blue to white */
   box-sizing: border-box;
 }
 
@@ -40,6 +40,7 @@
 .home-content {
   max-width: 40%;
   padding-left: 100px;
+  
 }
 
 .home-content h1 {
@@ -47,6 +48,7 @@
   color: #00b3ff;
   margin-top: 30px;
   font-family: sans-serif;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .home-content h6 {
@@ -57,6 +59,18 @@
   line-height: 60px;
   margin-top: 40px;
   font-family: sans-serif;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Button Styling */
@@ -80,9 +94,9 @@
 
 /* Image Section */
 .home-image {
- 
   margin-right: 100px;
   padding-top: 90px;
+  animation: fadeIn 2s ease-in-out;
 }
 
 /* Responsive Design for Home Section */
@@ -111,9 +125,10 @@
   align-items: center;
   padding: 20px;
   gap: 20px;
-  background-image:url(../assets/home4.jpg);
-  background-repeat: no-repeat;
+  background-image: url(../assets/cd180032de6d79de4da55f9c70197e06.jpg);
   background-size: cover;
+ 
+
   
 }
 
@@ -174,12 +189,12 @@
 /* Departments List */
 .departments-list {
   width: 30%;
-  height: 10px; /* Slightly increased width for better alignment */
+  height: 10px; 
   display: flex;
-  flex-direction: column; /* Stack the items vertically */
+  flex-direction: column; 
   gap: 10px; 
   margin-left: 40px;
-  margin-top: px;/* Add space between each list item */
+  margin-top: px;
 }
 
 .departments-list ul {
@@ -190,18 +205,18 @@
 }
 
 .departments-list li {
-  background-color: #00b3ff; /* Light blue background */
-  border-radius: 12px; /* Rounded corners */
+  background-color: #00b3ff; 
+  border-radius: 12px; 
   padding: 8px;
   text-align: center;
   font-size: 18px;
   margin: 4px;
   color: #19006c; 
- /* White text */
+
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added a bit more shadow for depth */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
-  background-color: #ffffff; /* Gradient overlay */
+  background-color: #ffffff; 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -256,6 +271,7 @@
 .department-details:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  
 }
 
 /* Responsive Design */
@@ -288,7 +304,7 @@
 }
 
 
-/* Services Section */
+
 /* Services Section */
 .services-section {
   text-align: center;
@@ -346,7 +362,7 @@
 }
 
 .service-content h3 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #00217a;
   margin-bottom: 0px;
 }
@@ -355,6 +371,83 @@
   font-size: 1rem;
   color: #666;
 }
+.latest-news-section {
+  background-color: #ffffff; 
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  text-align: center;
+  
+}
+/* Animation for Latest News Section */
 
 
-/* News Section */
+.section {
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.latest-news-section {
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.latest-news-section h2 {
+  font-size: 28px;
+  color: #1E3A66; /* Dark blue */
+  margin-bottom: 20px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction:row; /* Change to column for rows */
+  gap: 100px;
+  justify-content: center; /* Center the items */
+}
+
+.news-item {
+  margin-top: 40px;
+  background-color: rgb(190, 228, 255);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  /* Full width for each item */
+  box-sizing: border-box;
+}
+
+.news-item h3 {
+  font-size: 22px;
+  color: #1E3A66;
+}
+
+.news-date {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.news-description {
+  font-size: 50px;
+  color: #333;
+}
+
+.news-image {
+  width: 260px;
+  position: relative;
+  
+}
+.news-item a {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #0073e6; 
+  text-decoration: none; 
+  transition: color 0.3s ease;
+}
+
+.news-item a:hover {
+  color: #00448e; 
+ 
+}
+

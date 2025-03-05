@@ -17,7 +17,7 @@ const AboutUs = () => {
     </div>
 
     <div className="container">
-      <div className="workout-section">
+      <div className="about-section">
         <div className="text-content">
           <h2>OUR STORY</h2>
           <p>
@@ -28,10 +28,10 @@ const AboutUs = () => {
           </p>
           
         </div>
-        <img src="src/assets/d.jpg" alt="Workout Plan" />
+        <img src="src/assets/about2.jpg" alt="" />
       </div>
 
-      <div className="workout-section reverse-layout">
+      <div className="about-section reverse-layout">
       <div className="text-content">
         <h2>....</h2>
         <p>
@@ -42,10 +42,10 @@ const AboutUs = () => {
          
         </p>
       </div>
-       <img src="src/assets/d.jpg" alt="Exercise Library" />
+       <img src="src/assets/about3.jpg" alt="" />
      </div>
 
-     <div className="workout-section">
+     <div className="about-section">
         <div className="text-content">
 
           <h2>OUR VISION</h2>
@@ -55,40 +55,45 @@ const AboutUs = () => {
           </p>
           
         </div>
-        <img src="src/assets/d.jpg" alt="Workout Plan" />
+        <img src="src/assets/vision.jpg" alt="" />
       </div>
 
-      <div className="workout-section reverse-layout">
+      <div className="about-section reverse-layout">
       <div className="text-content">
         <h2>OUR MISSION</h2>
         <p>
         "To provide compassionate, high-quality healthcare services that meet the needs of our patients, their families, and the community"
         </p>
       </div>
-       <img src="src/assets/d.jpg" alt="Exercise Library" />
+       <img src="src/assets/mission.jpg" alt="Exercise Library" />
      </div>
 
     </div>
      
     
-
-    <div className="workout-section">
-        <div className="text-content">
-
-          <h2> WHY CHOOSE US?</h2>
+    <section className="welcome">
+        <div className="welcome-content">
+        <h2> WHY CHOOSE US?</h2>
          
-          <ul>
-            <li>Highly qualified and experienced medical professionals</li>
-            <li>State-of-the-art medical equipment and facilities</li>
-            <li>24/7 emergency and critical care services</li>
-            <li>Comprehensive range of healthcare specialties</li>
-            <li>Patient-centered approach and compassionate care</li>
-          </ul>
+         <ul>
+           <li>Highly qualified and experienced medical professionals</li>
+           <li>State-of-the-art medical equipment and facilities</li>
+           <li>24/7 emergency and critical care services</li>
+           <li>Comprehensive range of healthcare specialties</li>
+           <li>Patient-centered approach and compassionate care</li>
+         </ul>
+        </div>
+      </section>
+    
+    
+  
+          
         
           
-        </div>
+    
         
-      </div>
+
+    
 
 
        

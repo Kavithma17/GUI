@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 
 
 
-
 const Appointment = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -21,20 +20,21 @@ const Appointment = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Appointment Details:', formData);
-    alert('Appointment successfully booked!');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      date: '',
-      time: '',
-      doctor: '',
-      message: '',
-    });
-    
+    try {
+        const response = await fetch("http://localhost:3001/appointment", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+        const data = await response.json();
+        alert(data.message);
+    } catch (error) {
+        alert("Error booking appointment");
+    }
   };
 
   return (
@@ -47,7 +47,9 @@ const Appointment = () => {
 
     <div className="appointment">
      
+    
       <form className="appointment-form" onSubmit={handleSubmit}>
+       
         <div className="form-group">
           <label htmlFor="name">Full Name</label>
           <input
@@ -133,7 +135,7 @@ const Appointment = () => {
             onChange={handleChange}
           ></textarea>
         </div>
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="submit-btn" onClick={() => handleSubmit()}>
           Book Appointment
         </button>
       </form>

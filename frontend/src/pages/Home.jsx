@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Home.css';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+
 const Home = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('Aurumcare Departments');
   const [departmentDetails, setDepartmentDetails] = useState('At Aurumcare, our departments are designed to provide world-class medical services backed by cutting-edge technology and expert professionals. Each department is equipped with state-of-the-art facilities, ensuring precision, comfort, and excellence in patient care. We are committed to offering personalized treatments, fostering a compassionate environment, and delivering healthcare solutions that meet global standards. Whether it’s preventive care, diagnostics, or complex treatments, our departments strive to set benchmarks in quality and innovation for a healthier tomorrow');
@@ -8,23 +10,7 @@ const Home = () => {
 
   const [backgroundImage, setBackgroundImage] = useState('src/assets/pic16.jpg'); // Default background image
 
-  const newsItems = [
-    {
-      image: "src/assets/new2.jpg", // Replace with actual image URL
-      date: "March 15, 2024",
-      title: "Understanding the Risk Factors for Diabetes and Heart Disease",
-    },
-    {
-      image: "src/assets/new3.jpg", // Replace with actual image URL
-      date: "March 8, 2024",
-      title: "7 Insights into Elephantiasis",
-    },
-    {
-      image: "src/assets/new5.jpg", // Replace with actual image URL
-      date: "March 1, 2024",
-      title: "NMRA and MDEC: Safeguarding Medical Device Safety in Sri Lanka",
-    },
-  ];
+
   const departmentsInfo = {
     "Dental Sciences": {
       description: `The Dental Sciences department offers comprehensive care in oral health, including preventive and restorative treatments. Our team of experienced dental professionals ensures your oral health is in the best hands, combining modern technology with personalized care.
@@ -32,7 +18,7 @@ const Home = () => {
       Key sections include Preventive Dentistry for routine check-ups, cleanings, and fluoride treatments, as well as Restorative Dentistry, which includes cavity fillings, crowns, and bridges. Orthodontics focuses on braces and aligners for teeth straightening, while Cosmetic Dentistry covers teeth whitening, veneers, and smile makeovers.
   
       For more advanced needs, Oral Surgery handles wisdom tooth extractions, dental implants, and other surgical procedures to restore oral functionality and aesthetics.`,
-      image: "src/assets/dep1.jpg"
+      image: "src/assets/dep19.jpg"
     },
     "Renal Medicine": {
       description: `Our Renal Medicine department specializes in kidney care, dialysis, and transplantation services. The team provides tailored treatments supported by advanced diagnostic techniques to meet individual patient needs.
@@ -104,7 +90,7 @@ const Home = () => {
       Prenatal Care includes routine check-ups, ultrasounds, and high-risk pregnancy management. Gynecological Surgery covers procedures like hysterectomies and laparoscopic surgeries. Fertility Clinics offer assisted reproductive technologies and counseling for families seeking conception support.
   
       Additionally, Menopause Clinics help manage symptoms and ensure long-term health, while Cancer Screening programs focus on early detection through Pap smears and mammograms.`,
-      image: "src/assets/dep15.jpg"
+      image: "src/assets/dep20.jpg"
     },
     "Wellness Center": {
       description: `Our Wellness Center promotes holistic health, offering services aimed at improving overall well-being and preventing illness. The center provides a range of programs to enhance physical and mental health.
@@ -112,21 +98,44 @@ const Home = () => {
       Health and Wellness Programs include yoga, meditation, and stress management techniques. Preventive Health Packages feature regular health screenings and diagnostic services, while Diet and Nutrition Counseling provides personalized plans for healthy living.
   
       Physical Therapy focuses on rehabilitation and pain management, and Lifestyle Clinics offer support for smoking cessation, weight management, and other lifestyle improvements.`,
-      image: "src/assets/dep16.jpg"
+      image: "src/assets/dep18.jpg"
     }
   };
+  const newsArticles = [
+    {
+      id: 1,
+      title: "New Advanced MRI Scanner Installed",
+      date: "January 10, 2025",
+      description: "Our hospital now offers a cutting-edge MRI scanner for faster and more accurate diagnoses.",
+      image: "src/assets/news1.jpg" 
+    },
+    {
+      id: 2,
+      title: "Free Health Camp This Weekend",
+      date: "January 15, 2025",
+      description: "Join our free health check-up camp and consult with top specialists at no cost.",
+      image: "src/assets/news2.jpg" 
+    },
+    {
+      id: 3,
+      title: "24/7 Emergency Care Expanded",
+      date: "January 20, 2025",
+      description: "We've upgraded our emergency department with additional ICU beds and specialized trauma care.",
+      image: "src/assets/news3.jpg" 
+    },
+  ];
   
   
 
   const showDepartmentDetails = (department) => {
     setSelectedDepartment(department);
     setDepartmentDetails(departmentsInfo[department].description);
-    setBackgroundImage(departmentsInfo[department].image); // Set background image when department is selected
+    setBackgroundImage(departmentsInfo[department].image); 
   };
 
   return (
     <>
-      {/* Green bar */}
+     
       <div className="top-bar">
         <span> Find us | 📞 Hotline : +94 11 9153492</span>
       </div>
@@ -139,7 +148,13 @@ const Home = () => {
             at Aurumcare Hospital's new Alfred place Wing
           </h6>
           <h1>Trust in us for all your healthcare needs.</h1>
-          <button className="home-button">CALL US NOW</button>
+
+          <button
+            className="home-button"
+            onClick={() => document.getElementById('footer-section').scrollIntoView({ behavior: 'smooth' })}
+          >
+            CALL US NOW
+          </button>
         </div>
         <div className="home-image">
           <img src="src/assets/hospital03.png" alt="Hospital illustration" />
@@ -148,10 +163,6 @@ const Home = () => {
 
       {/* Welcome section */}
       <section className="welcome">
-        <div className='welcome-img1'>
-          <img src='src/assets/c.png'/>
-        </div>
-
         <div className="welcome-content">
           <h1>Welcome to Aurumcare Hospital</h1>
           <h3>Dedicated to you</h3>
@@ -165,7 +176,6 @@ const Home = () => {
             are dedicated to providing exceptional clinical outcomes and the utmost customer satisfaction.
           </p>
         </div>
-        
       </section>
 
       {/* Departments section */}
@@ -201,36 +211,51 @@ const Home = () => {
       </div>
 
       <div className="services-section">
-  <div className="services-intro">
-   
-    <p>We’re committed to providing compassionate and high-quality medical care.</p>
-  </div>
-  <div className="services-list">
-    {[
-      
-      { image: "src/assets/ser1.jpg", title: "Physiotherapy and Sports Medicine" },
-      { image: "src/assets/ser2.jpg", title: "Pharmacy" },
-      { image: "src/assets/ser3.jpg", title: "Wound and Foot Care Unit" },
-      { image: "src/assets/ser4.jpg", title: "Lab Services" },
-      { image: "src/assets/ser5.jpg", title: "Ambulance Services" },
-      { image: "src/assets/ser6.jpg", title: "Emergency Unit" },
-      { image: "src/assets/ser7.jpg", title: "Blood Transfusion Services" },
-      { image: "src/assets/ser8.jpg", title: "ICU" },
-    ].map((service, index) => (
-      <div key={index} className="service-card">
-        <img src={service.image} alt={service.title} className="service-image" />
-        <div className="service-content">
-          <h3>{service.title}</h3>
-          
+        <div className="services-intro">
+          <p>We’re committed to providing compassionate and high-quality medical care.</p>
+        </div>
+        <div className="services-list">
+          {[
+            { image: "src/assets/ser1.jpg", title: "Physiotherapy and Sports Medicine" },
+            { image: "src/assets/ser2.jpg", title: "Pharmacy" },
+            { image: "src/assets/ser3.jpg", title: "Wound and Foot Care Unit" },
+            { image: "src/assets/ser4.jpg", title: "Lab Services" },
+            { image: "src/assets/ser5.jpg", title: "Ambulance Services" },
+            { image: "src/assets/ser6.jpg", title: "Emergency Unit" },
+            { image: "src/assets/ser7.jpg", title: "Blood Transfusion Services" },
+            { image: "src/assets/ser8.jpg", title: "ICU" },
+          ].map((service, index) => (
+            <div key={index} className="service-card">
+              <img src={service.image} alt={service.title} className="service-image" />
+              <div className="service-content">
+                <h3>{service.title}</h3>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
 
-      
+      {/* Latest News section */}
+      <div className="top-bar">
+        <span>
+          <h2 > LATEST NEWS </h2>
+        </span>
+      </div>
 
-      <Footer />
+      <div className="latest-news-section">
+        <div className="news-list">
+          {newsArticles.map((article) => (
+            <div key={article.id} className="news-item">
+              <img src={article.image} alt={article.title} className="news-image" />
+              <h3>{article.title}</h3>
+              <p className="news-date">{article.date}</p>
+              <p className="news-description">{article.description}</p>
+              <Link to="/news">Read more..</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Footer id="footer-section" />
     </>
   );
 };

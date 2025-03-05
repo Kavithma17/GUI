@@ -1,47 +1,65 @@
 const express = require("express");
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
-app.use (cors());
+app.use(cors());
+
+
 const UserModel = require('./models/User');
+const AppointmentModel = require('./models/Appointment');
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/user");
+if (!mongoose.connection.readyState) {
+    mongoose.connect("mongodb://127.0.0.1:27017/user", {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }).then(() => console.log("MongoDB connected"))
+      .catch((err) => console.log(err));
+}
 
-app.post('/login', (req,res)=>{
-    const {email ,password} = req.body;
-    UserModel.findOne({email :email})
-    .then(user=>{
 
-        if(user)
-        {
-            if(user.password == password)
-                {
-                    res.json("Success")
-                }
-                else{
-                    res.json("The password is incorrect")
-                }
-
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await UserModel.findOne({ email: email });
+        if (user) {
+            if (user.password === password) {
+                res.json("Success");
+            } else {
+                res.json("The password is incorrect");
+            }
+        } else {
+            res.json("No record existed");
         }
-        else
-        {
-            res.json("No record existed")
-        }
-        
-    })
-})
-
-app.post('/register', (req,res)=>{
-    UserModel.create (req.body)
-    .then (users =>res.json(users))
-    .catch (err=> res.json(err))
-})
-
-app.listen(3001,()=>  {
-    console.log("server is running");
-})
+    } catch (error) {
+        res.status(500).json({ error: "Server error" });
+    }
+});
 
 
+app.post('/register', async (req, res) => {
+    try {
+        const user = await UserModel.create(req.body);
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ error: "Server error" });
+    }
+});
+
+
+app.post('/appointment', async (req, res) => {
+    try {
+        const appointment = await AppointmentModel.create(req.body);
+        res.json({ message: "Appointment booked successfully", appointment });
+    } catch (error) {
+        res.status(500).json({ error: "Error booking appointment" });
+    }
+});
+
+
+app.listen(3001, () => {
+    console.log("Server is running on port 3001");
+});

@@ -103,7 +103,7 @@ const Doctors = () => {
               <h3>{doctor.name}</h3>
               <p>{doctor.specialization}</p>
               <p><strong>Department:</strong> {doctor.department}</p>
-              <button className="appointment-button"> <a href="/appointment">Make Appointment</a>
+              <button className="appointment-button"> <a href="/login">Make Appointment</a>
           </button>
               
             </div>

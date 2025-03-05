@@ -30,7 +30,7 @@ export default function SignUp() {
         console.log(result);
 
         // Show success message and clear the form
-        setSuccessMessage("You registered successfully!");
+        alert("You registered successfully!");
         setFname("");
         setLname("");
         setEmail("");

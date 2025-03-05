@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Doctors from './pages/Doctors';
 import { useState } from 'react';
+import News from './pages/News';
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path='/doctors' element={<Doctors/>} />
+        <Route path='/news' element = {<News/>}/>
       
        
        

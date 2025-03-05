@@ -1,89 +1,94 @@
+/* Footer Container */
+.footer-container {
+  background-color: #01195b;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
 
-/* Footer Styling */
-.footer {
-    background: linear-gradient(to right,rgb(159, 218, 255),#efeded); /* Gradient from blue to white */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start; /* Ensures proper vertical alignment */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 150px; 
+  height: 250px;/* Adjusted for spacing */
 
-    color: #00277c;
-    padding: 40px 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    margin-top: 40px;
-    
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .footer-contact {
-    width: 30%;
-    margin-bottom: 20px;
-  }
-  
-  .footer-contact h3 {
-    font-size: 28px;
-    color: #00277c;
-    margin-bottom: 10px;
-  }
-  
-  .footer-contact p {
-    font-size: 16px;
-    color: #00277c;
-  }
-  
-  .footer-contact-info {
-    width: 40%;
-  }
-  
-  .footer-item {
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-  
-  .footer-item strong {
-    color: #000000;
-  }
-  
-  .footer-social {
-    width: 25%;
-  }
-  
-  .footer-social h4 {
-    font-size: 20px;
-    color: #00277c;
-    margin-bottom: 10px;
-  }
-  
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-  }
-  
-  .social-icons a {
-    font-size: 24px;
-    color: #00b3ff;
-    transition: color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    color: #00b3ff;
-  }
-  
-  /* Responsive styling for smaller screens */
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-contact, .footer-contact-info, .footer-social {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
+}
+
+
+/* Sections */
+.footer-about,
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1 1 250px;
+  min-width: 200px; /* Ensures sections don't shrink too much */
+}
+
+.footer-about p,
+.footer-contact ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.footer-about h3,
+.footer-contact h3,
+.footer-social h3{
+  color: #74badf;
+  font-size: 1.5rem;
+}
+
+
+.footer-links ul
+ {
+  list-style: none;
+  padding-left: 100px;
+  margin: 0;
+}
+
+.footer-links ul li,
+.footer-contact ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: aqua;
+}
+
+/* Social Media */
+.footer-social .social-icons {
+  display: flex;
+  justify-content: center; /* Centers the social icons */
+  gap: 15px;
+}
+
+.footer-social .social-icons a {
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social .social-icons a:hover {
+  color: aqua;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ffffff;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #bbbbbb;
+  height: 10px;
+}

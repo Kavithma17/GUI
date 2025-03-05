@@ -20,17 +20,21 @@
 /* Signup form container */
 .signup-container {
   background: #ffffffd1;
-  padding: 20px;
+  padding-top: -30px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   width: 400px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .signup-container h3 {
   text-align: center;
   margin-bottom: 20px;
-  color: #007bff;
+  color:#00217a;
   font-weight: bold;
+  font-size: 2rem;
+  margin-top: 20px;
 }
 
 /* Signup form input box */
